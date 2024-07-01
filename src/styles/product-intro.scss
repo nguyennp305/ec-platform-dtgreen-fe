@@ -1,0 +1,283 @@
+/*Start Animations*/
+@-webkit-keyframes animatetop {
+	from {
+		top: -300px;
+		opacity: 0;
+	}
+	to {
+		top: 0;
+		opacity: 1;
+	}
+}
+@keyframes animatetop {
+	from {
+		top: -300px;
+		opacity: 0;
+	}
+	to {
+		top: 0;
+		opacity: 1;
+	}
+}
+@-webkit-keyframes zoomIn {
+	0% {
+		opacity: 0;
+		-webkit-transform: scale3d(0.3, 0.3, 0.3);
+		transform: scale3d(0.3, 0.3, 0.3);
+	}
+	50% {
+		opacity: 1;
+	}
+}
+@keyframes zoomIn {
+	0% {
+		opacity: 0;
+		-webkit-transform: scale3d(0.3, 0.3, 0.3);
+		transform: scale3d(0.3, 0.3, 0.3);
+	}
+	50% {
+		opacity: 1;
+	}
+}
+/*End Animations*/
+/*
+-- Start BackGround Animation 
+*/
+.background-intro {
+  background-image: url('https://theme.hstatic.net/200000276855/1000725342/14/ms_banner_img1.jpg?v=100');
+  background-size: cover;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  // background-attachment: fixed;
+}
+.area {
+	width: 100%;
+	height: 100vh;
+	position: absolute;
+	z-index: -1;
+}
+
+.circles {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 96%;
+	overflow: hidden;
+}
+
+.circles li {
+	position: absolute;
+	display: block;
+	list-style: none;
+	width: 20px;
+	height: 20px;
+	background: rgba(255, 255, 255, 0.2);
+	animation: animate 25s linear infinite;
+	bottom: -150px;
+}
+
+.circles li:nth-child(1) {
+	left: 25%;
+	width: 80px;
+	height: 80px;
+	animation-delay: 0s;
+}
+
+.circles li:nth-child(2) {
+	left: 10%;
+	width: 20px;
+	height: 20px;
+	animation-delay: 2s;
+	animation-duration: 12s;
+}
+
+.circles li:nth-child(3) {
+	left: 70%;
+	width: 60px;
+	height: 60px;
+	animation-delay: 4s;
+}
+
+.circles li:nth-child(4) {
+	left: 40%;
+	width: 90px;
+	height: 90px;
+	animation-delay: 0s;
+	animation-duration: 18s;
+}
+
+.circles li:nth-child(5) {
+	left: 65%;
+	width: 120px;
+	height: 120px;
+	animation-delay: 0s;
+}
+
+.circles li:nth-child(6) {
+	left: 75%;
+	width: 110px;
+	height: 110px;
+	animation-delay: 3s;
+}
+
+.circles li:nth-child(7) {
+	left: 35%;
+	width: 150px;
+	height: 150px;
+	animation-delay: 3s;
+}
+
+.circles li:nth-child(8) {
+	left: 50%;
+	width: 85px;
+	height: 85px;
+	animation-delay: 8s;
+	animation-duration: 30s;
+}
+
+.circles li:nth-child(9) {
+	left: 20%;
+	width: 45px;
+	height: 45px;
+	animation-delay: 0s;
+	animation-duration: 25s;
+}
+
+.circles li:nth-child(10) {
+	left: 85%;
+	width: 150px;
+	height: 150px;
+	animation-delay: 1s;
+	animation-duration: 10s;
+}
+
+.circles li:nth-child(11) {
+	left: 75%;
+	width: 80px;
+	height: 80px;
+	animation-delay: 1s;
+}
+
+.circles li:nth-child(12) {
+	left: 70%;
+	width: 20px;
+	height: 20px;
+	animation-delay: 1s;
+	animation-duration: 12s;
+}
+
+.circles li:nth-child(13) {
+	left: 30%;
+	width: 60px;
+	height: 60px;
+	animation-delay: 2s;
+}
+
+.circles li:nth-child(14) {
+	left: 80%;
+	width: 90px;
+	height: 90px;
+	animation-delay: 0s;
+	animation-duration: 26s;
+}
+
+.circles li:nth-child(15) {
+	left: 85%;
+	width: 120px;
+	height: 120px;
+	animation-delay: 1s;
+}
+
+.circles li:nth-child(16) {
+	left: 15%;
+	width: 110px;
+	height: 110px;
+	animation-delay: 5s;
+}
+
+.circles li:nth-child(17) {
+	left: 85%;
+	width: 150px;
+	height: 150px;
+	animation-delay: 5s;
+}
+
+.circles li:nth-child(18) {
+	left: 10%;
+	width: 85px;
+	height: 85px;
+	animation-delay: 6s;
+	animation-duration: 30s;
+}
+
+.circles li:nth-child(19) {
+	left: 80%;
+	width: 45px;
+	height: 45px;
+	animation-delay: 0s;
+	animation-duration: 20s;
+}
+
+.circles li:nth-child(20) {
+	left: 25%;
+	width: 150px;
+	height: 150px;
+	animation-delay: 0s;
+	animation-duration: 15s;
+}
+
+
+@keyframes animate {
+	0% {
+		transform: translateY(0) rotate(0deg);
+		opacity: 1;
+		border-radius: 0;
+	}
+
+	100% {
+		transform: translateY(-1000px) rotate(720deg);
+		opacity: 0;
+		border-radius: 50%;
+	}
+}
+/*
+-- End BackGround Animation 
+*/
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.button-intro {
+  opacity: 0; /* Bắt đầu với opacity 0 để hiệu ứng mượt */
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+.watch-now {
+  animation-name: slideInFromLeft;
+  animation-delay: 0.5s; /* Thời gian chờ trước khi bắt đầu hiệu ứng */
+}
+
+.buy-now {
+  animation-name: slideInFromRight;
+  animation-delay: 0.5s; /* Thời gian chờ trước khi bắt đầu hiệu ứng */
+}
