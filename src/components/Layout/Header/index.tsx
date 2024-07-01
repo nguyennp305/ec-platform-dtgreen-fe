@@ -61,6 +61,7 @@ const Header = () => {
                   alt="logo"
                   width={140}
                   height={30}
+                  priority
                   className="w-full dark:hidden"
                   style={{ filter: "invert(48%) sepia(85%) saturate(1395%) hue-rotate(84deg) brightness(90%) contrast(92%)" }}
                 />
@@ -69,6 +70,7 @@ const Header = () => {
                   alt="logo"
                   width={140}
                   height={30}
+                  priority
                   className="hidden w-full dark:block"
                   style={{ filter: "invert(48%) sepia(85%) saturate(1395%) hue-rotate(84deg) brightness(90%) contrast(92%)" }}
                 />

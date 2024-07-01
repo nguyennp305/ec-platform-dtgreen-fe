@@ -1,3 +1,22 @@
-.bg-test {
-  background-color: red;
+.custom-scroll-disabled::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+.custom-scroll-disabled {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.custom-scroll::-webkit-scrollbar {
+  width: 8px; /* Width of the scrollbar */
+}
+
+.custom-scroll::-webkit-scrollbar-track {
+  background: none; /* Color of the scrollbar track */
+}
+
+.custom-scroll::-webkit-scrollbar-thumb {
+  background-color: #32CD32; /* Color of the scrollbar thumb */
+  border-radius: 10px; /* Roundness of the scrollbar thumb */
+  border: none; /* Space around the thumb */
 }
