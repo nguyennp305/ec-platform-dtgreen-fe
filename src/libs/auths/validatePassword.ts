@@ -1,11 +1,8 @@
+
+import { errorsDefault } from "@/app/auth/signin/page";
+
 export const validatePassword = (password, setErrors) => {
-  const errors = {
-    passwordLength: "",
-    passwordDigit: "",
-    passwordLowercase: "",
-    passwordUppercase: "",
-    passwordSpecialChar: "",
-  };
+  const errors = {...errorsDefault};
 
   if (password.length < 6) {
     errors.passwordLength = "Password must be at least 6 characters long.";

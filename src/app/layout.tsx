@@ -1,5 +1,6 @@
 "use client";
 
+import { UserProvider } from "@/context/user-context";
 import Footer from "@/components/Layout/Footer";
 import Header from "@/components/Layout/Header";
 import ScrollToTop from "@/components/ScrollToTop";
@@ -23,12 +24,14 @@ export default function RootLayout({
       <head />
 
       <body className={`bg-[#FCFCFC] dark:bg-black ${inter.className} overflow-y-scroll custom-scroll`}>
-        <Providers>
-          <Header />
-          {children}
-          <Footer />
-          <ScrollToTop />
-        </Providers>
+        <UserProvider>
+          <Providers>
+            <Header />
+            {children}
+            <Footer />
+            <ScrollToTop />
+          </Providers>
+        </UserProvider>
       </body>
     </html>
   );
