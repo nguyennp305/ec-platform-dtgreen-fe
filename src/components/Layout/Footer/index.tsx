@@ -4,6 +4,7 @@ import GoogleIcon from '@mui/icons-material/Google';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import Link from "next/link";
+import { paths } from "@/paths";
 
 const footerData = {
   companyInfo: {
@@ -62,7 +63,7 @@ const Footer = () => {
         <div className="row-gap-10 mb-8 grid gap-16 lg:grid-cols-6">
           <div className="md:max-w-md lg:col-span-2">
             <a
-              href="/"
+              href={paths.home}
               aria-label="Go home"
               title={footerData.companyInfo.name}
               className="inline-flex items-center"

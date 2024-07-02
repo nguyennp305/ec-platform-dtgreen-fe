@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 import { Metadata } from "next";
+import { paths } from "@/paths";
 
 export const metadata: Metadata = {
   title: "Error Page | Free Next.js Template for Startup and SaaS",
@@ -149,7 +150,7 @@ const ErrorPage = () => {
                   deleted or does not exist.
                 </p>
                 <Link
-                  href="/"
+                  href={paths.home}
                   className="px-8 py-3 text-base font-bold text-white duration-300 rounded-md bg-primary shadow-signUp hover:bg-white hover:text-primary md:px-9 lg:px-8 xl:px-9"
                 >
                   Back to Homepage

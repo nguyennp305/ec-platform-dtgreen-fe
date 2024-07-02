@@ -1,4 +1,5 @@
 import { Menu } from "@/types/menu";
+import { paths } from "@/paths";
 
 const menuData: Menu[] = [
   {
@@ -63,13 +64,13 @@ const menuData: Menu[] = [
       {
         id: 46,
         title: "Sign In Page",
-        path: "/auth/signin",
+        path: paths.auth.signIn,
         newTab: false,
       },
       {
         id: 47,
         title: "Sign Up Page",
-        path: "/auth/signup",
+        path: paths.auth.signUp,
         newTab: false,
       },
       {

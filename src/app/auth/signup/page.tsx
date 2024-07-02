@@ -5,6 +5,7 @@ import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import { validatePassword } from "@/libs/auths/validatePassword";
 import "@/styles/animated/falling-leaves.scss";
+import { paths } from "@/paths";
 
 const SignupPage = () => {
   const [formData, setFormData] = useState({
@@ -167,7 +168,7 @@ const SignupPage = () => {
                 <p className="text-sm text-center font-light text-gray-500 dark:text-gray-400">
                   Do you already have an account ?{" "}
                   <Link
-                    href="/auth/signin"
+                    href={paths.auth.signIn}
                     className="text-primary-600 dark:text-primary-500 font-medium hover:underline"
                   >
                     Sign in

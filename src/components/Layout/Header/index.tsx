@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import ThemeToggler from "./ThemeToggler";
 import menuData from "./menuData";
+import { paths } from "@/paths";
 
 const Header = () => {
   // Navbar toggle
@@ -51,7 +52,7 @@ const Header = () => {
           <div className="relative -mx-4 flex items-center justify-between">
             <div className="w-60 max-w-full px-4 xl:mr-12">
               <Link
-                href="/"
+                href={paths.home}
                 className={`header-logo block w-full ${
                   sticky ? "py-5 lg:py-2" : "py-8"
                 } `}
@@ -164,13 +165,13 @@ const Header = () => {
               </div>
               <div className="flex items-center justify-end pr-16 lg:pr-0">
                 <Link
-                  href="/auth/signin"
+                  href={paths.auth.signIn}
                   className="hidden px-7 py-3 text-base font-medium text-dark hover:opacity-70 dark:text-white md:block"
                 >
                   Sign In
                 </Link>
                 <Link
-                  href="/auth/signup"
+                  href={paths.auth.signUp}
                   className="ease-in-up shadow-btn hover:shadow-btn-hover hidden rounded-sm px-8 py-3 text-base font-medium text-white transition duration-300 hover:bg-opacity-90 md:block md:px-9 lg:px-6 xl:px-9 bg-green-750"
                 >
                   Sign Up
