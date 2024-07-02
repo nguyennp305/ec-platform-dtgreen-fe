@@ -3,12 +3,14 @@ import Link from "next/link";
 import { useState } from "react";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
+import { validatePassword } from "@/libs/auths/validatePassword";
+import "@/styles/animated/falling-leaves.scss";
 
-const SigninPage = () => {
+const SignupPage = () => {
   const [formData, setFormData] = useState({
     email: "",
-    password: "",
-    rememberMe: false,
+    username: "",
+    password: ""
   });
 
   const [errors, setErrors] = useState({
@@ -30,94 +32,16 @@ const SigninPage = () => {
     }));
   };
 
-  const validatePassword = (password) => {
-    // Validate password length
-    if (password.length < 6) {
-      setErrors((prevErrors) => ({
-        ...prevErrors,
-        passwordLength: "Password must be at least 6 characters long.",
-      }));
-      return false;
-    } else {
-      setErrors((prevErrors) => ({
-        ...prevErrors,
-        passwordLength: "",
-      }));
-    }
-
-    // Validate at least one digit
-    if (!/\d/.test(password)) {
-      setErrors((prevErrors) => ({
-        ...prevErrors,
-        passwordDigit: "Password must contain at least one digit (0-9).",
-      }));
-      return false;
-    } else {
-      setErrors((prevErrors) => ({
-        ...prevErrors,
-        passwordDigit: "",
-      }));
-    }
-
-    // Validate at least one lowercase letter
-    if (!/[a-z]/.test(password)) {
-      setErrors((prevErrors) => ({
-        ...prevErrors,
-        passwordLowercase: "Password must contain at least one lowercase letter (a-z).",
-      }));
-      return false;
-    } else {
-      setErrors((prevErrors) => ({
-        ...prevErrors,
-        passwordLowercase: "",
-      }));
-    }
-
-    // Validate at least one uppercase letter
-    if (!/[A-Z]/.test(password)) {
-      setErrors((prevErrors) => ({
-        ...prevErrors,
-        passwordUppercase: "Password must contain at least one uppercase letter (A-Z).",
-      }));
-      return false;
-    } else {
-      setErrors((prevErrors) => ({
-        ...prevErrors,
-        passwordUppercase: "",
-      }));
-    }
-
-    // Validate at least one special character
-    if (!/[!@#$%^&*(),.?":{}|<>]/.test(password)) {
-      setErrors((prevErrors) => ({
-        ...prevErrors,
-        passwordSpecialChar: "Password must contain at least one special character.",
-      }));
-      return false;
-    } else {
-      setErrors((prevErrors) => ({
-        ...prevErrors,
-        passwordSpecialChar: "",
-      }));
-    }
-
-    return true; // Password is valid if it passes all checks
-  };
-
   const togglePasswordVisibility = () => {
     setShowPassword((prevShow) => !prevShow);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    const isValidPassword = validatePassword(formData.password);
-
+    const isValidPassword = validatePassword(formData.password, setErrors);
     if (!isValidPassword) {
       return; // Stop submission if password is invalid
     }
-
-    // Perform other validations if needed
 
     // Submit form data (mock example)
     console.log("Form data:", formData);
@@ -126,13 +50,23 @@ const SigninPage = () => {
     // Clear form after submission (if needed)
     setFormData({
       email: "",
-      password: "",
-      rememberMe: false,
+      username: "",
+      password: ""
     });
 
     // Redirect or perform next action after successful submission
     // Example: redirect to dashboard or another page
     // router.push("/dashboard");
+  };
+
+  const Leaves = () => {
+    return (
+      <div id="leaves">
+        {[...Array(15)].map((_, index) => (
+          <i key={index}></i>
+        ))}
+      </div>
+    );
   };
 
   return (
@@ -141,13 +75,13 @@ const SigninPage = () => {
         <div className="container flex justify-center">
           <div className="w-full rounded-lg bg-white shadow dark:border dark:border-gray-700 dark:bg-gray-800 sm:max-w-md md:mt-0 xl:p-0">
             <div className="space-y-4 p-6 sm:p-8 md:space-y-6">
-              <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 dark:text-white md:text-2xl">
-                Sign in to your account
+              <h1 className="text-xl text-center font-bold leading-tight tracking-tight text-gray-900 dark:text-white md:text-2xl">
+                Sign up to your account
               </h1>
               <form className="space-y-4 md:space-y-6" onSubmit={handleSubmit}>
                 <div>
                   <label className="mb-2 block text-sm font-medium text-gray-900 dark:text-white">
-                    Your email
+                    Email
                   </label>
                   <input
                     type="email"
@@ -157,6 +91,21 @@ const SigninPage = () => {
                     onChange={handleChange}
                     className="focus:ring-primary-600 focus:border-primary-600 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
                     placeholder="name@company.com"
+                    required
+                  />
+                </div>
+                <div>
+                  <label className="mb-2 block text-sm font-medium text-gray-900 dark:text-white">
+                    Username
+                  </label>
+                  <input
+                    type="text"
+                    name="username"
+                    id="username"
+                    value={formData.username}
+                    onChange={handleChange}
+                    className="focus:ring-primary-600 focus:border-primary-600 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
+                    placeholder="michael"
                     required
                   />
                 </div>
@@ -208,38 +157,20 @@ const SigninPage = () => {
                     <p className="text-red-500 text-sm mt-1">{errors.passwordSpecialChar}</p>
                   )}
                 </div>
-                <div className="flex items-center justify-between">
-                  <div className="flex items-start">
-                    <div className="flex h-5 items-center">
-                      <input
-                        id="remember"
-                        name="rememberMe"
-                        type="checkbox"
-                        checked={formData.rememberMe}
-                        onChange={handleChange}
-                        className="focus:ring-3 focus:ring-primary-300 dark:focus:ring-primary-600 h-4 w-4 rounded border border-gray-300 bg-gray-50 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800"
-                      />
-                    </div>
-                    <div className="ml-3 text-sm">
-                      <label className="text-gray-500 dark:text-gray-300">
-                        Remember me
-                      </label>
-                    </div>
-                  </div>
-                </div>
+                <br />
                 <button
                   type="submit"
-                  className="text-gray-900 w-full bg-gradient-to-r from-teal-200 to-lime-200 hover:bg-gradient-to-l hover:from-teal-200 hover:to-lime-200 focus:ring-4 focus:outline-none focus:ring-lime-200 dark:focus:ring-teal-700 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
+                  className="text-gray-900 w-full bg-gradient-to-r from-teal-200 to-lime-200 hover:bg-gradient-to-l hover:from-teal-200 hover:to-lime-200 focus:ring-4 focus:outline-none focus:ring-lime-200 dark:focus:ring-teal-700 font-medium rounded-lg text-sm px-5 py-2.5 text-center mb-2"
                 >
-                  Sign In
+                  Sign Up
                 </button>
                 <p className="text-sm text-center font-light text-gray-500 dark:text-gray-400">
-                  Don’t have an account yet?{" "}
+                  Do you already have an account ?{" "}
                   <Link
-                    href="/signup"
+                    href="/auth/signin"
                     className="text-primary-600 dark:text-primary-500 font-medium hover:underline"
                   >
-                    Sign up
+                    Sign in
                   </Link>
                 </p>
               </form>
@@ -247,6 +178,7 @@ const SigninPage = () => {
           </div>
         </div>
         <div className="absolute left-0 top-0 z-[-1]">
+          <Leaves />
           <svg
             width="1440"
             height="969"
@@ -308,4 +240,4 @@ const SigninPage = () => {
   );
 };
 
-export default SigninPage;
+export default SignupPage;

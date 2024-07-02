@@ -1,5 +1,5 @@
 import Link from "next/link";
-import "@/styles/product-intro.scss";
+import "@/styles/animated/product-intro.scss";
 
 const ProductionIntro = () => {
   const circles = Array.from({ length: 20 }, (_, index) => (

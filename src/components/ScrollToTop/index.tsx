@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import KeyboardDoubleArrowUpIcon from '@mui/icons-material/KeyboardDoubleArrowUp';
-import '@/styles/scroll-to-top.scss';
+import '@/styles/animated/scroll-to-top.scss';
 
 export default function ScrollToTop() {
   const [isVisible, setIsVisible] = useState(false);
