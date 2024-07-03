@@ -1,5 +1,5 @@
 
-import { errorsDefault } from "@/app/auth/signin/page";
+import { errorsDefault } from "@/constants/validates/errorsDefault";
 
 export const validatePassword = (password, setErrors) => {
   const errors = {...errorsDefault};

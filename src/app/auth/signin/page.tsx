@@ -10,16 +10,8 @@ import { useUser } from "@/hooks/user-user";
 import { useState } from "react";
 import { validatePassword } from "@/libs/auths/validatePassword";
 import { paths } from "@/paths";
+import { errorsDefault } from "@/constants/validates/errorsDefault";
 import "@/styles/animated/falling-leaves.scss";
-
-export const errorsDefault = {
-  passwordLength: "",
-  passwordDigit: "",
-  passwordLowercase: "",
-  passwordUppercase: "",
-  passwordSpecialChar: "",
-  checkAccount: "",
-};
 
 const SigninPage = () => {
   const router = useRouter();
