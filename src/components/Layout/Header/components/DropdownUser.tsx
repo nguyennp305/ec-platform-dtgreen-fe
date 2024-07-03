@@ -1,14 +1,27 @@
-import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import ClickOutside from "@/components/Common/ClickOutside";
+import { UserContext } from "@/context/user-context";
 import { paths } from "@/paths";
+import { useContext, useState } from "react";
+import { authClient } from "@/libs/auths/client";
+import { useRouter } from "next/navigation";
 
 const DropdownUser = () => {
+  const router = useRouter();
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const user = useContext(UserContext);
+
+  const handleLogout = async () => {
+    console.log("logout");
+    await authClient.signOut();
+    // Refresh the auth state
+    await user.checkSession?.();
+    router.replace(paths.auth.signIn);
+  };
 
   return (
-    <ClickOutside onClick={() => setDropdownOpen(false)} className="relative">
+    <ClickOutside onClick={() => setDropdownOpen(false)} className="relative mr-4">
       <Link
         onClick={() => setDropdownOpen(!dropdownOpen)}
         className="flex items-center gap-4"
@@ -16,12 +29,12 @@ const DropdownUser = () => {
       >
         <span className="hidden text-right lg:block">
           <span className="block text-sm font-medium text-black dark:text-white">
-            Thomas Anree
+            {user.user.username}
           </span>
-          <span className="block text-xs">UX Designer</span>
+          <span className="block text-xs">{user.user.role}</span>
         </span>
 
-        <span className="h-12 w-16 rounded-full">
+        <span className="h-12 w-12 rounded-full hover:animate-tada">
           <Image
             width={112}
             height={112}
@@ -29,7 +42,7 @@ const DropdownUser = () => {
             alt="User"
           />
         </span>
-        <span className="h-4 w-4">
+        {/* <span className="h-4 w-4">
           <Image
             width={16}
             height={16}
@@ -37,7 +50,7 @@ const DropdownUser = () => {
             alt="Arrow Down Icon"
             className={`transform ${dropdownOpen ? "rotate-180" : ""} transition-transform duration-300`}
           />
-        </span>
+        </span> */}
       </Link>
 
       {/* <!-- Dropdown Start --> */}
@@ -62,7 +75,7 @@ const DropdownUser = () => {
               </Link>
             </li>
           </ul>
-          <button className="flex items-center gap-3 px-6 py-4 text-sm font-medium duration-300 ease-in-out hover:text-primary lg:text-base text-black dark:text-black">
+          <button className="flex items-center gap-3 px-6 py-4 text-sm font-medium duration-300 ease-in-out hover:text-primary lg:text-base text-black dark:text-black" onClick={handleLogout}>
             <span className="w-[22px] h-[22px]">
               <Image
                 width={22}

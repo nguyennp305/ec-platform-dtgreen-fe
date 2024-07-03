@@ -9,30 +9,45 @@ import DropdownUser from "./DropdownUser";
 
 export const AuthSettingAccount = () => {
   const user = useContext(UserContext);
-  console.log('yser', user)
+  console.log('user', user)
+  const [isLoading, setIsLoading] = useState(true);
 
-  const [isOpen, setIsOpen] = useState(false);
+  useEffect(() => {
+    if (user.user !== undefined) {
+      setIsLoading(false);
+    }
+  }, [user]);
+
+  if (isLoading) {
+    return;
+  }
 
   return (
     <>
-      <div className="flex items-center justify-end pr-16 lg:pr-0">
-        <Link
-          href={paths.auth.signIn}
-          className="hidden px-7 py-3 text-base font-medium text-dark hover:opacity-70 dark:text-white md:block"
-        >
-          Sign In
-        </Link>
-        <Link
-          href={paths.auth.signUp}
-          className="ease-in-up shadow-btn hover:shadow-btn-hover hidden rounded-sm px-8 py-3 text-base font-medium text-white transition duration-300 hover:bg-opacity-90 md:block md:px-9 lg:px-6 xl:px-9 bg-green-750"
-        >
-          Sign Up
-        </Link>
+      <div className="flex items-center">
+        {!user.user ? (
+          <>
+            <Link
+              href={paths.auth.signIn}
+              className="w-32 px-7 py-3 text-base font-medium text-dark hover:opacity-70 dark:text-white"
+            >
+              Sign In
+            </Link>
+            <Link
+              href={paths.auth.signUp}
+              className="h-12 w-32 mr-4 rounded-lg bg-green-750 py-3 text-center text-base font-medium text-white shadow-btn transition duration-300 ease-in-out hover:bg-opacity-90 hover:shadow-btn-hover"
+            >
+              Sign Up
+            </Link>
+          </>
+        ) : (
+          <DropdownUser />
+        )}
+
         <div>
           <ThemeToggler />
         </div>
-        <DropdownUser />
       </div>
     </>
-  )
-}
+  );
+};

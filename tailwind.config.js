@@ -61,6 +61,22 @@ module.exports = {
           '750': '#056f3c',
         },
       },
+      keyframes: {
+        tada: {
+          '0%, 100%': {
+            transform: 'scale3d(1, 1, 1)',
+          },
+          '10%, 20%': {
+            transform: 'scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg)',
+          },
+          '30%, 50%, 70%, 90%': {
+            transform: 'scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg)',
+          },
+          '40%, 60%, 80%': {
+            transform: 'scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg)',
+          },
+        },
+      },
 
       boxShadow: {
         signUp: "0px 5px 10px rgba(4, 10, 34, 0.2)",
@@ -78,6 +94,9 @@ module.exports = {
       },
       dropShadow: {
         three: "0px 5px 15px rgba(6, 8, 15, 0.05)",
+      },
+      animation: {
+        tada: 'tada 1s ease-in-out',
       },
     },
   },

@@ -70,10 +70,10 @@ const SigninPage = () => {
     await checkSession?.();
 
     // Clear form after submission (if needed)
-    setFormData({
-      username: "",
-      password: "",
-    });
+    // setFormData({
+    //   username: "",
+    //   password: "",
+    // });
 
     // UserProvider, for this case, will not refresh the router
     // After refresh, GuestGuard will handle the redirect
