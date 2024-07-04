@@ -10,16 +10,17 @@ const ProductionIntro = () => {
     <>
       <section
         id="home"
-        className="background-intro relative z-10 overflow-hidden bg-white pb-16 pt-[120px] dark:bg-gray-dark md:pb-[120px] md:pt-[150px] xl:pb-[160px] xl:pt-[180px] 2xl:pb-[200px] 2xl:pt-[210px]"
+        className="overflow-hidden bg-red-100 dark:bg-gray-dark pt-28"
       >
+        
+        <div className="background-intro relative z-10">
         <div className="area">
           <ul className="circles">
             {circles}
           </ul>
         </div>
-        <div className="container">
-          <div className="-mx-4 flex flex-wrap">
-            <div className="w-full px-4">
+          <div className="flex flex-wrap">
+            <div className="w-full py-24">
               <div className="mx-auto max-w-[800px] text-center">
                 <h1 className="animate-bounce mb-5 text-3xl font-bold leading-tight text-white sm:text-4xl sm:leading-tight md:text-5xl md:leading-tight">
                   DT GREEN
@@ -30,13 +31,13 @@ const ProductionIntro = () => {
                 <div className="button-group-intro flex flex-col items-center justify-center space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
                   <Link
                     href="/"
-                    className="watch-now button-intro rounded-sm bg-green-750 px-8 py-4 text-base font-semibold text-white duration-300 ease-in-out hover:bg-green-550"
+                    className="watch-now button-intro rounded-lg bg-green-750 px-8 py-4 text-base font-semibold text-white duration-300 ease-in-out hover:bg-green-550"
                   >
                     Xem ngay
                   </Link>
                   <Link
                     href="/"
-                    className="buy-now button-intro inline-block rounded-sm px-8 py-4 text-base font-semibold text-white duration-300 ease-in-out bg-white/10 dark:text-white hover:bg-white/5"
+                    className="buy-now button-intro inline-block rounded-lg px-8 py-4 text-base font-semibold text-white duration-300 ease-in-out bg-white/10 dark:text-white hover:bg-white/5"
                   >
                     Mua ngay
                   </Link>

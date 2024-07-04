@@ -21,14 +21,13 @@ const DropdownUser = () => {
   };
 
   return (
-    <ClickOutside onClick={() => setDropdownOpen(false)} className="relative mr-4">
-      <Link
+    <ClickOutside onClick={() => setDropdownOpen(false)} className="relative">
+      <div
         onClick={() => setDropdownOpen(!dropdownOpen)}
         className="flex items-center gap-4"
-        href="#"
       >
-        <span className="hidden text-right lg:block">
-          <span className="block text-sm font-medium text-black dark:text-white">
+        <span className="hidden text-right text-white lg:block">
+          <span className="block text-sm font-medium">
             {user.user.username}
           </span>
           <span className="block text-xs">{user.user.role}</span>
@@ -51,18 +50,18 @@ const DropdownUser = () => {
             className={`transform ${dropdownOpen ? "rotate-180" : ""} transition-transform duration-300`}
           />
         </span> */}
-      </Link>
+      </div>
 
       {/* <!-- Dropdown Start --> */}
       {dropdownOpen && (
         <div
-          className={`absolute right-0 mt-4 flex w-64 flex-col rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark`}
+          className={`absolute mt-4 flex w-64 flex-col rounded-lg border border-stroke bg-white shadow-2xl dark:border-strokedark dark:bg-dark`}
         >
           <ul className="flex flex-col gap-5 border-b border-stroke px-6 py-6 dark:border-strokedark">
             <li>
               <Link
-                href={paths.auth.signIn}
-                className="flex items-center gap-3 text-sm font-medium duration-300 ease-in-out hover:text-primary lg:text-base text-black dark:text-black"
+                href={paths.home}
+                className="flex items-center gap-3 text-sm font-medium duration-300 ease-in-out hover:text-primary text-black dark:text-white"
               >
                 <span className="w-[22px] h-[22px]">
                   <Image
@@ -70,18 +69,20 @@ const DropdownUser = () => {
                     height={22}
                     src="/images/icons/user.svg"
                     alt="User Icon"
+                    className="dark:filter dark:invert dark:sepia-0 dark:saturate-0 dark:hue-rotate-0 dark:brightness-100 dark:contrast-100"
                   /></span>
                 My Profile
               </Link>
             </li>
           </ul>
-          <button className="flex items-center gap-3 px-6 py-4 text-sm font-medium duration-300 ease-in-out hover:text-primary lg:text-base text-black dark:text-black" onClick={handleLogout}>
+          <button className="flex items-center gap-3 px-6 py-4 text-sm font-medium duration-300 ease-in-out hover:text-primary text-black dark:text-white" onClick={handleLogout}>
             <span className="w-[22px] h-[22px]">
               <Image
                 width={22}
                 height={22}
                 src="/images/icons/logout.svg"
                 alt="Logout Icon"
+                className="dark:filter dark:invert dark:sepia-0 dark:saturate-0 dark:hue-rotate-0 dark:brightness-100 dark:contrast-100"
               /></span>
             Log Out
           </button>

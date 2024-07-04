@@ -2,7 +2,7 @@ export const products = [
   {
     id: 1,
     name: "Áo thun nam cổ tròn basic",
-    category: "Thời trang nam",
+    category: 1,
     information: "Chất liệu cotton 100%, co giãn tốt, thấm hút mồ hôi.",
     benefit: "Thoải mái khi vận động, phù hợp cho nhiều hoạt động.",
     price: 150000,
@@ -14,7 +14,7 @@ export const products = [
   {
     id: 2,
     name: "Quần jean nam ống suông",
-    category: "Thời trang nam",
+    category: 1,
     information: "Chất liệu jean dày dặn, co giãn nhẹ, form dáng suông thời trang.",
     benefit: "Thoải mái khi vận động, dễ phối đồ.",
     price: 250000,
@@ -26,7 +26,7 @@ export const products = [
   {
     id: 3,
     name: "Váy nữ maxi hoa nhí",
-    category: "Thời trang nữ",
+    category: 2,
     information: "Chất liệu voan mềm mại, họa tiết hoa nhí nữ tính.",
     benefit: "Thích hợp cho những buổi đi chơi, dạo phố.",
     price: 300000,
@@ -38,7 +38,7 @@ export const products = [
   {
     id: 4,
     name: "Giày thể thao nam",
-    category: "Giày dép",
+    category: 3,
     information: "Chất liệu da tổng hợp cao cấp, đế cao su êm ái.",
     benefit: "Thoải mái khi vận động, phù hợp cho nhiều hoạt động.",
     price: 400000,
@@ -50,7 +50,7 @@ export const products = [
   {
     id: 5,
     name: "Túi xách nữ đeo chéo",
-    category: "Phụ kiện",
+    category: 4,
     information: "Chất liệu da PU cao cấp, kiểu dáng thời trang.",
     benefit: "Phù hợp cho nhiều dịp khác nhau.",
     price: 200000,
@@ -62,7 +62,7 @@ export const products = [
   {
     id: 6,
     name: "Điện thoại thông minh",
-    category: "Điện tử",
+    category: 5,
     information: "Màn hình 6.5 inch, camera 108MP, pin 5000mAh.",
     benefit: "Hiệu năng mạnh mẽ, camera chụp ảnh đẹp, pin trâu.",
     price: 10000000,
@@ -74,7 +74,7 @@ export const products = [
   {
     id: 7,
     name: "Laptop văn phòng",
-    category: "Điện tử",
+    category: 5,
     information: "Màn hình 14 inch, RAM 8GB, SSD 256GB.",
     benefit: "Phù hợp cho công việc văn phòng, học tập.",
     price: 15000000,
@@ -86,7 +86,7 @@ export const products = [
   {
     id: 8,
     name: "Tai nghe không dây",
-    category: "Phụ kiện",
+    category: 4,
     information: "Chất lượng âm thanh cao cấp, pin sử dụng 8 giờ.",
     benefit: "Thoải mái khi sử dụng, âm thanh rõ ràng.",
     price: 1200000,
@@ -98,7 +98,7 @@ export const products = [
   {
     id: 9,
     name: "Đồng hồ thông minh",
-    category: "Phụ kiện",
+    category: 4,
     information: "Màn hình cảm ứng, theo dõi sức khỏe, thông báo tin nhắn.",
     benefit: "Tiện lợi cho việc theo dõi sức khỏe và thông báo.",
     price: 3000000,
@@ -110,7 +110,7 @@ export const products = [
   {
     id: 10,
     name: "Balo thời trang",
-    category: "Phụ kiện",
+    category: 4,
     information: "Chất liệu vải cao cấp, thiết kế thời trang.",
     benefit: "Phù hợp cho đi học, đi làm, du lịch.",
     price: 500000,
@@ -122,7 +122,7 @@ export const products = [
   {
     id: 11,
     name: "Áo khoác nữ thời trang",
-    category: "Thời trang nữ",
+    category: 2,
     information: "Chất liệu len mềm mại, giữ ấm tốt.",
     benefit: "Phù hợp cho mùa thu và đông.",
     price: 350000,
@@ -134,7 +134,7 @@ export const products = [
   {
     id: 12,
     name: "Đồng hồ nam dây da",
-    category: "Phụ kiện",
+    category: 4,
     information: "Chất liệu dây da thật, mặt kính chống xước.",
     benefit: "Phong cách lịch lãm, bền bỉ với thời gian.",
     price: 4500000,
@@ -146,7 +146,7 @@ export const products = [
   {
     id: 13,
     name: "Máy ảnh kỹ thuật số",
-    category: "Điện tử",
+    category: 5,
     information: "Độ phân giải 20MP, zoom quang học 10x.",
     benefit: "Chụp ảnh sắc nét, phù hợp cho du lịch.",
     price: 8000000,
@@ -158,7 +158,7 @@ export const products = [
   {
     id: 14,
     name: "Nồi cơm điện tử",
-    category: "Đồ gia dụng",
+    category: 6,
     information: "Dung tích 1.8L, nhiều chế độ nấu.",
     benefit: "Tiện lợi cho gia đình, tiết kiệm thời gian.",
     price: 1500000,
@@ -170,7 +170,7 @@ export const products = [
   {
     id: 15,
     name: "Bộ chăn ga gối cotton",
-    category: "Đồ gia dụng",
+    category: 6,
     information: "Chất liệu cotton cao cấp, thoáng mát.",
     benefit: "Đem lại giấc ngủ ngon, dễ chịu.",
     price: 2000000,
@@ -182,7 +182,7 @@ export const products = [
   {
     id: 16,
     name: "Sách kỹ năng sống",
-    category: "Sách",
+    category: 7,
     information: "Cuốn sách giúp phát triển kỹ năng mềm.",
     benefit: "Cải thiện kỹ năng giao tiếp, quản lý thời gian.",
     price: 150000,
@@ -194,7 +194,7 @@ export const products = [
   {
     id: 17,
     name: "Bàn phím cơ",
-    category: "Phụ kiện",
+    category: 4,
     information: "Switch cơ học, đèn nền RGB.",
     benefit: "Phím bấm nhạy, thích hợp cho chơi game và làm việc.",
     price: 1200000,
@@ -206,7 +206,7 @@ export const products = [
   {
     id: 18,
     name: "Chuột không dây",
-    category: "Phụ kiện",
+    category: 4,
     information: "Kết nối không dây 2.4GHz, pin sử dụng 6 tháng.",
     benefit: "Thoải mái khi sử dụng, dễ dàng di chuyển.",
     price: 500000,
@@ -218,7 +218,7 @@ export const products = [
   {
     id: 19,
     name: "Máy lọc không khí",
-    category: "Đồ gia dụng",
+    category: 6,
     information: "Công nghệ lọc HEPA, lọc bụi mịn PM2.5.",
     benefit: "Không khí trong lành, bảo vệ sức khỏe.",
     price: 3000000,
@@ -230,7 +230,7 @@ export const products = [
   {
     id: 20,
     name: "Tủ lạnh mini",
-    category: "Đồ gia dụng",
+    category: 6,
     information: "Dung tích 90L, tiết kiệm điện năng.",
     benefit: "Tiện lợi cho không gian nhỏ, tiết kiệm điện.",
     price: 4000000,
