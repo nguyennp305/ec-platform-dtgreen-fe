@@ -14,7 +14,7 @@ const DropdownUser = () => {
 
   const handleLogout = async () => {
     console.log("logout");
-    await authClient.signOut();
+    await authClient.logout();
     // Refresh the auth state
     await user.checkSession?.();
     router.replace(paths.auth.signIn);

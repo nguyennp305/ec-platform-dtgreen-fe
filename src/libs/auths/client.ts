@@ -1,3 +1,4 @@
+import { login, logout } from "@/apis/auth";
 import type { User } from "@/types/user";
 
 function generateToken(): string {
@@ -59,9 +60,8 @@ class AuthClient {
     params: SignInWithPasswordParams,
   ): Promise<{ error?: string }> {
     const { username, password } = params;
-    console.log("username", username, params);
-    console.log("password", password);
     // We do not handle the API, so we'll check if the credentials match with the hardcoded ones.
+    const statusLogin = await login(params);
     if (username !== 'demo@primacy' || password !== '123456aA@') {
       return {
         error: 'Invalid credentials. Please re-check email or password',
@@ -93,7 +93,8 @@ class AuthClient {
     return { data: user };
   }
 
-  async signOut(): Promise<{ error?: string }> {
+  async logout(): Promise<{ error?: string }> {
+    const statusLogout = await logout();
     localStorage.removeItem('custom-auth-token');
 
     return {};

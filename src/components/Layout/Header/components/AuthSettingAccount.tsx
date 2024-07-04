@@ -9,7 +9,6 @@ import DropdownUser from "./DropdownUser";
 
 export const AuthSettingAccount = () => {
   const user = useContext(UserContext);
-  console.log('user', user)
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
